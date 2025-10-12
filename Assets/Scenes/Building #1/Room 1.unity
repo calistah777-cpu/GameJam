@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1346743167}
   - component: {fileID: 1346743166}
   - component: {fileID: 1346743165}
+  - component: {fileID: 1346743168}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346743168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346743164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &1894842446
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +269,7 @@ GameObject:
   - component: {fileID: 1894842450}
   - component: {fileID: 1894842449}
   - component: {fileID: 1894842448}
-  - component: {fileID: 1894842456}
+  - component: {fileID: 1894842454}
   - component: {fileID: 1894842447}
   - component: {fileID: 1894842455}
   m_Layer: 0
@@ -403,6 +448,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894842454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894842446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4329249ea465427cbb1a2e9063849b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1894842455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +487,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1894842456}
+      - m_Target: {fileID: 1894842454}
         m_TargetAssemblyTypeName: PlayerMovement2, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -442,73 +499,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 8148aebb-0d26-4573-a88e-1dd4242d5d41
+    m_ActionId: 7d6dd576-9851-4d14-af52-f78a587ecbb4
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: dac01945-d0f8-410c-9ae3-74c10b3a333d
+    m_ActionId: 2d110417-1077-49ab-b21d-0d38e1c983c4
     m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: ddb00883-f6bd-4acf-b7b6-d24dfafb9f25
+    m_ActionId: 1001a93e-b9c3-4a5a-9e6e-78eb6765cbdc
     m_ActionName: 'Player/Fire[/Mouse/leftButton]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cf28d862-6943-4fd8-b954-77cc4a4d1594
+    m_ActionId: d648dd99-0b8c-4ce5-a53c-e4266f03a6dc
     m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7ec1ec2a-55c1-4986-8675-cfd330d5c714
+    m_ActionId: 16c40159-e9b5-4509-864f-ab3d72d12261
     m_ActionName: 'UI/Submit[/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 16d40dd5-c4b3-44de-868e-31e6acb5433c
+    m_ActionId: 2aeb697a-1933-4c09-8fe8-8846abd5dc2d
     m_ActionName: 'UI/Cancel[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: a4cd1151-5efb-495b-b6c3-676f2452dabe
+    m_ActionId: 12cee818-fb19-4a39-8b44-2e8256c8f651
     m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: f4751519-249f-4cb3-ac90-1c51b197ae25
+    m_ActionId: 13ebeac0-aac4-4571-8841-325744ade24e
     m_ActionName: 'UI/Click[/Mouse/leftButton,/Pen/tip]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c2f4cdcf-914c-4397-b478-07929886e5ac
+    m_ActionId: 2d363505-4197-4aad-996f-3ef0e2a5005b
     m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: ae248560-6715-4ce7-802a-3678ceb7cab5
+    m_ActionId: 7c13a118-22f6-4643-a170-72b05d44c99e
     m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7ed22cec-d858-479f-9194-cbd877222171
+    m_ActionId: a02d4cb1-7efd-4926-9775-e9ad8e782204
     m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: b7250195-7654-4f32-9cd3-b1530deabb65
+    m_ActionId: a172fc37-2e6a-4729-b9b1-33ca51feee74
     m_ActionName: UI/TrackedDevicePosition
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: dcd47c71-3963-4ad6-9c3a-e4fe5b96ef57
+    m_ActionId: 4432db22-acfd-4f65-b0c5-1e99c2c6db9d
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1894842456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894842446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ce65c808bffc44389c12b19a67f6aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
