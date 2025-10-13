@@ -4,35 +4,35 @@ using Unity.Cinemachine;
 public class MapTransition : MonoBehaviour
 {
     [SerializeField] PolygonCollider2D mapBoundary;
-    CinemachineConfiner confiner;
+    CinemachineConfiner2D confiner;
     [SerializeField] Direction direction;
     [SerializeField] float additivePos = 2f;
     enum Direction {Up, Down, Left, Right}
 
     private void Awake()
     {
-        confiner = FindObjectOfType<CinemachineConfiner>();
-        UpdatePlayerPosition(collision.gameObject);
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            confiner.m_BoundingShape2D - mapBoundary;
+            confiner.BoundingShape2D = mapBoundary;
+            UpdatePlayerPosition(collision.gameObject);
         }
     }
     
     private void UpdatePlayerPosition(GameObject player)
     {
-        Vector3 = newPos - player.transform.position;
+        Vector3 newPos = player.transform.position;
 
         switch (direction)
         {
             case Direction.Up:
                 newPos.y += additivePos;
                 break;
-            case direction.Down:
+            case Direction.Down:
                 newPos.y -= additivePos;
                 break;
             case Direction.Left:
