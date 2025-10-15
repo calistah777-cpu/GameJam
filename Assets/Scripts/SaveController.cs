@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.Cinemachine;
 
 public class SaveController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SaveController : MonoBehaviour
     void Start()
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+
+        LoadGame();
     }
 
     public void SaveGame()
@@ -18,7 +21,7 @@ public class SaveController : MonoBehaviour
         SaveData saveData = new SaveData
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
-            mapBoundary = FindAnyObjectByType<CinemachineConfine>().m_BoudningShape2D.gameObject
+            mapBoundary = FindAnyObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -31,7 +34,7 @@ public class SaveController : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
 
-            FindAnyObjectByType<CinemachineConfine>().m_BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
+            FindAnyObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
 
         }
         else
