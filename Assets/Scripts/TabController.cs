@@ -18,7 +18,7 @@ public class TabController : MonoBehaviour
     public void ActivateTab(int tabNo)
     {
         for (int i = 0; i < pages.Length; i++)
-            // tabImages[i].color = Color.red; Not sure why it wont work, I think this line of code is having issues, will review later
+            tabImages[i].color = Color.red; //Not sure why it wont work, I think this line of code is having issues, will review later
             pages[tabNo].SetActive(true);
     tabImages[tabNo].color = Color.white;
     }
