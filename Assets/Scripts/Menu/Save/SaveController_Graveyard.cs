@@ -26,9 +26,7 @@ public class SaveController_Graveyard : MonoBehaviour
         inventoryController = FindAnyObjectByType<InventoryController>();
         hotBarController = FindAnyObjectByType<HotBarController>();
         chests = FindObjectsByType<Chest>(FindObjectsSortMode.None);
-
-        Debug.Log($"[SaveController] Found InventoryController: {inventoryController != null}");
-        Debug.Log($"[SaveController] Found HotBarController: {hotBarController != null}");
+        
     }
 
     public void SaveGame()
