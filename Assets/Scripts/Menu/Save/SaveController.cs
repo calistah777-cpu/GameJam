@@ -13,10 +13,12 @@ public class SaveController : MonoBehaviour
     private HotBarController hotBarController;
     private Chest[] chests;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         InitializeComponents();
+    }
+    void Start()
+    {
         LoadGame();
     }
 
@@ -27,6 +29,9 @@ public class SaveController : MonoBehaviour
         inventoryController = FindAnyObjectByType<InventoryController>();
         hotBarController = FindAnyObjectByType<HotBarController>();
         chests = FindObjectsByType<Chest>(FindObjectsSortMode.None);
+
+        Debug.Log($"[SaveController] Found InventoryController: {inventoryController != null}");
+        Debug.Log($"[SaveController] Found HotBarController: {hotBarController != null}");
     }
 
     public void SaveGame()
@@ -37,7 +42,8 @@ public class SaveController : MonoBehaviour
             mapBoundary = FindAnyObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name,
             inventorySaveData = inventoryController.GetInventoryItems(),
             hotBarSaveData = hotBarController.GetHotBarItems(),
-            chestSaveData = GetChestState()
+            chestSaveData = GetChestState(),
+            //questProgressData = QuestController.Instance.activateQuests
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -70,6 +76,8 @@ public class SaveController : MonoBehaviour
             hotBarController.SetHotBarItems(saveData.hotBarSaveData);
 
             LoadChestState(saveData.chestSaveData);
+
+            QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
 
         }
         else

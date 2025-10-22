@@ -7,17 +7,23 @@ public class NPCDialogue : ScriptableObject
     //public Sprite npcPortrait;
     public string[] dialogueLines;
     public bool[] autoProgressLines;
+    public bool[] endDialogueLines;
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
+    public DialogueChoice[] choices;
 
-    // Update is called once per frame
-    void Update()
-    {
+    public int questInProgressIndex;
+    public int questCompletedIndex;
+    public Quest quest;
 
-    }
+}
+
+[System.Serializable]
+public class DialogueChoice
+{
+    public int dialogueIndex;
+    public string[] choices;
+    public int[] nextDialogueIndexes;
+    public bool[] givesQuest;
 }
