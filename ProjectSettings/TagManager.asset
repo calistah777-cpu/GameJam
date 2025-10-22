@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bg
+    uniqueID: 1304454543
+    locked: 0
   - name: Floor
     uniqueID: 2188110283
     locked: 0

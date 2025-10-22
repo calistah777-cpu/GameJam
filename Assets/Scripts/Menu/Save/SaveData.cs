@@ -5,6 +5,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class SaveData
 {
+    public string currentScene;
     public Vector3 playerPosition;
     public string mapBoundary;
     public List<InventorySaveData> inventorySaveData;

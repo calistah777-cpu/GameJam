@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 297498990}
   - component: {fileID: 297498989}
   - component: {fileID: 297498991}
+  - component: {fileID: 297498992}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -561,7 +562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297498988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f434620936710c04399e0c5252fa8843, type: 3}
   m_Name: 
@@ -601,6 +602,19 @@ MonoBehaviour:
   itemPrefabs:
   - {fileID: 3503798952970606902, guid: 5d108e661293647f2822f683ad8b6e65, type: 3}
   - {fileID: 9165938860422477167, guid: 36be71eca51cf43c09caae9c5999550f, type: 3}
+--- !u!114 &297498992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297498988}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f895939646ca54d3e934878038fb2ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultStartingScene: CemeteryScene
 --- !u!1 &303849519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,6 +4096,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1384991525}
   dialogueText: {fileID: 761292871}
   nameText: {fileID: 103420529}
+  choiceContainer: {fileID: 0}
+  choiceButtonPrefab: {fileID: 0}
 --- !u!1 &1294616982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,8 +5444,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 297498989}
-        m_TargetAssemblyTypeName: SaveController, Assembly-CSharp
+      - m_Target: {fileID: 297498992}
+        m_TargetAssemblyTypeName: SaveController_Graveyard, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:

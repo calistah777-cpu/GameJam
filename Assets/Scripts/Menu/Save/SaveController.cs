@@ -2,9 +2,9 @@ using System.IO;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.Cinemachine;
 using System.Linq;
+using Unity.Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
@@ -13,12 +13,9 @@ public class SaveController : MonoBehaviour
     private HotBarController hotBarController;
     private Chest[] chests;
 
-    void Awake()
-    {
-        InitializeComponents();
-    }
     void Start()
     {
+        InitializeComponents();
         LoadGame();
     }
 
@@ -29,9 +26,7 @@ public class SaveController : MonoBehaviour
         inventoryController = FindAnyObjectByType<InventoryController>();
         hotBarController = FindAnyObjectByType<HotBarController>();
         chests = FindObjectsByType<Chest>(FindObjectsSortMode.None);
-
-        Debug.Log($"[SaveController] Found InventoryController: {inventoryController != null}");
-        Debug.Log($"[SaveController] Found HotBarController: {hotBarController != null}");
+        
     }
 
     public void SaveGame()
@@ -43,7 +38,8 @@ public class SaveController : MonoBehaviour
             inventorySaveData = inventoryController.GetInventoryItems(),
             hotBarSaveData = hotBarController.GetHotBarItems(),
             chestSaveData = GetChestState(),
-            //questProgressData = QuestController.Instance.activateQuests
+            questProgressData = QuestController.Instance.activateQuests,
+            handInQuestIDs = QuestController.Instance.handInQuestIDs
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -78,6 +74,7 @@ public class SaveController : MonoBehaviour
             LoadChestState(saveData.chestSaveData);
 
             QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
+            QuestController.Instance.handInQuestIDs = saveData.handInQuestIDs;
 
         }
         else
@@ -99,4 +96,3 @@ public class SaveController : MonoBehaviour
         }
     }
 }
-

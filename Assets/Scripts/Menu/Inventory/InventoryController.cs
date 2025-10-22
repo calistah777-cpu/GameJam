@@ -29,7 +29,21 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         itemDictionary = FindAnyObjectByType<ItemDictionary>();
+        InitializeSlots();
         RebuildItemCounts();
+    }
+
+    public void InitializeSlots()
+    {
+        // Clear existing slots
+        foreach (Transform child in inventoryPanel.transform)
+            Destroy(child.gameObject);
+
+        // Create empty slots
+        for (int i = 0; i < slotCount; i++)
+        {
+            Instantiate(slotPrefab, inventoryPanel.transform);
+        }
     }
 
     public void RebuildItemCounts()

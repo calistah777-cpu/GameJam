@@ -10,7 +10,7 @@ public class Item : MonoBehaviour
         Debug.Log("Using item " + Name);
     }
 
-    public virtual void Pickup()
+    public virtual void ShowPopup()
     {
         Sprite itemIcon = GetComponent<Image>().sprite; //use GetComponent<SpriteRenderer>() if you don't have an image
         if(ItemPickupUIController.Instance != null) {
