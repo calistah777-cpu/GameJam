@@ -30,6 +30,11 @@ public class SceneLoader : MonoBehaviour
                 Debug.LogWarning("[MainMenu] Failed to delete old save: " + ex.Message);
             }
         }
+
+        // Optionally, create a new save with the starting scene
+        SaveData newSave = new SaveData { lastScene = "CemeteryScene" };
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(newSave));
+
         SceneManager.LoadScene("CemeteryScene");
     }
 
@@ -37,8 +42,18 @@ public class SceneLoader : MonoBehaviour
     {
         if (File.Exists(saveLocation))
         {
-            Debug.Log("[MainMenu] Save file found. Loading game...");
-            SceneManager.LoadScene("CemeteryScene");
+            string json = File.ReadAllText(saveLocation);
+            SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+
+            if (!string.IsNullOrEmpty(saveData.lastScene))
+            {
+                SceneManager.LoadScene(saveData.lastScene);
+            }
+            else
+            {
+                Debug.LogWarning("[MainMenu] Save file invalid. Loading default scene.");
+                SceneManager.LoadScene("CemeteryScene");
+            }
         }
         else
         {
@@ -47,9 +62,18 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    public void SaveCurrentScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SaveData saveData = new SaveData { lastScene = currentScene };
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+        Debug.Log("[SceneLoader] Saved current scene: " + currentScene);
+    }
+
     public void OnQuit()
     {
         Debug.Log("[MainMenu] Quitting game...");
+        SceneManager.LoadScene("Menu");
         Application.Quit();
     }
 }

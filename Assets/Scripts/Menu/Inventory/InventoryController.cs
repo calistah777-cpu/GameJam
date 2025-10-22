@@ -119,15 +119,24 @@ public class InventoryController : MonoBehaviour
 
     public void SetInventoryItems(List<InventorySaveData> inventorySaveData)
     {
-        foreach (Transform child in inventoryPanel.transform)
+        if (inventoryPanel.transform.childCount == 0)
+            InitializeSlots();
+            
+        foreach (Transform slotTransform in inventoryPanel.transform)
         {
-            Destroy(child.gameObject);  //clear inventory to avoid duplicates
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot.currentItem != null)
+            {
+                Destroy(slot.currentItem);
+            }
+            
+            //Destroy(child.gameObject);  //clear inventory to avoid duplicates
         }
 
-        for (int i = 0; i < slotCount; i++)
+        /*for (int i = 0; i < slotCount; i++)
         {
             Instantiate(slotPrefab, inventoryPanel.transform);  //create new slots
-        }
+        }*/
 
         foreach (InventorySaveData data in inventorySaveData)
         {

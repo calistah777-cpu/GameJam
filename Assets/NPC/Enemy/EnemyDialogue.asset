@@ -17,5 +17,10 @@ MonoBehaviour:
   - hello, i am the enemy
   - blah blah blah
   autoProgressLines: 0100
+  endDialogueLines: 0001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
+  choices: []
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}

@@ -8,17 +8,20 @@ using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
+    public static SaveController Instance { get; private set; }
     private string saveLocation;
     private InventoryController inventoryController;
     private HotBarController hotBarController;
     private Chest[] chests;
 
-    void Start()
+    void Awake()
     {
         InitializeComponents();
+    } 
+    void Start()
+    {
         LoadGame();
     }
-
     private void InitializeComponents() 
     {
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
@@ -86,13 +89,17 @@ public class SaveController : MonoBehaviour
         }
     }
 
-    private void LoadChestState(List<ChestSaveData> chestStates) {
-        foreach(Chest chest in chests) {
+    private void LoadChestState(List<ChestSaveData> chestStates)
+    {
+        foreach (Chest chest in chests)
+        {
             ChestSaveData chestSaveData = chestStates.FirstOrDefault(c => c.chestID == chest.ChestID);
 
-            if(chestSaveData != null) {
+            if (chestSaveData != null)
+            {
                 chest.SetOpened(chestSaveData.isOpened);
             }
         }
     }
+    
 }

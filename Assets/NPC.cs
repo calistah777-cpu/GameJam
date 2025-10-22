@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -12,6 +13,8 @@ public class NPC : MonoBehaviour, IInteractable
 
     private enum QuestState { NotStarted, InProgress, Completed }
     private QuestState questState = QuestState.NotStarted;
+
+    [SerializeField] private bool completeQuestOnInteract;
 
     private void Start()
     {
@@ -27,6 +30,12 @@ public class NPC : MonoBehaviour, IInteractable
     {
         if (dialogueData == null)
         {
+            return;
+        }
+
+        if (completeQuestOnInteract && dialogueData.quest != null)
+        {
+            FinalScene(dialogueData.quest);
             return;
         }
 
@@ -183,8 +192,17 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueUI.ShowDialogueUI(false);
 
     }
-    
+
     public void HandleQuestCompletion(Quest quest)
+    {
+        //change sprite to no flower
+        RewardsController.Instance.GiveQuestReward(quest);
+        QuestController.Instance.HandInQuest(quest.questID);
+        SceneManager.LoadScene("ChurchScene");
+        SaveController.Instance.SaveGame();
+    }
+    
+    public void FinalScene(Quest quest)
     {
         RewardsController.Instance.GiveQuestReward(quest);
         QuestController.Instance.HandInQuest(quest.questID);
