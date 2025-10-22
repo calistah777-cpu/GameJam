@@ -97,6 +97,7 @@ public class QuestController : MonoBehaviour
         }
 
         Dictionary<int, int> itemCounts = InventoryController.Instance.GetItemCounts();
+        
         foreach (var item in requiredItems)
         {
             if (itemCounts.GetValueOrDefault(item.Key) < item.Value)

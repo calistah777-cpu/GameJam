@@ -157,6 +157,7 @@ public class NPC : MonoBehaviour, IInteractable
         {
             QuestController.Instance.AcceptQuest(dialogueData.quest);
             questState = QuestState.InProgress;
+            RewardsController.Instance.GiveItemReward(1, 1);    //drops 1st flower
         }
         dialogueIndex = nextIndex;
         dialogueUI.ClearChoices();
@@ -185,6 +186,7 @@ public class NPC : MonoBehaviour, IInteractable
     
     public void HandleQuestCompletion(Quest quest)
     {
+        RewardsController.Instance.GiveQuestReward(quest);
         QuestController.Instance.HandInQuest(quest.questID);
     }
 }
