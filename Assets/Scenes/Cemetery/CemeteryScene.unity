@@ -3510,7 +3510,7 @@ Transform:
   m_GameObject: {fileID: 566223310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.13, y: 10.52, z: 0}
+  m_LocalPosition: {x: -17.52, y: 33.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5979,7 +5979,7 @@ Transform:
   m_GameObject: {fileID: 945159033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.81, y: 10.62, z: 0}
+  m_LocalPosition: {x: -20, y: 14.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6452,7 +6452,7 @@ Transform:
   m_GameObject: {fileID: 969781336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36, y: 2.67, z: 0}
+  m_LocalPosition: {x: 20.22, y: 14.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6915,7 +6915,7 @@ Transform:
   m_GameObject: {fileID: 1076627105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.18, y: 2.63, z: 0}
+  m_LocalPosition: {x: 0.02, y: 42.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7068,6 +7068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58597bdfa3bb41a1bba2027d688248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playCutsceneOnInteract: 0
   dialogueData: {fileID: 11400000, guid: 699b9096bacb849f687320ff0c41b16f, type: 2}
   completeQuestOnInteract: 0
 --- !u!1 &1079831441
@@ -14761,7 +14762,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 727464055}
   m_HandleRect: {fileID: 727464054}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

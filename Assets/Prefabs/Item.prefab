@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  Name: Item1
+  Name: Flower
 --- !u!212 &-6073243646075987797
 SpriteRenderer:
   m_ObjectHideFlags: 0
