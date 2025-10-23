@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Enemy
   dialogueLines:
-  - hello, i am the enemy
-  - blah blah blah
+  - 'Ah, God in all his divinity has given me the opportunity to correct my mistake. '
+  - It must be fate that you have presented yourself before me, have you come to
+    at last face righteous judgment?
   autoProgressLines: 0100
   autoProgressDelay: 1.5
   typingSpeed: 0.05
