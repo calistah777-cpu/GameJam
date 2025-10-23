@@ -15,8 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Church/ChurchScene.unity
     guid: b9c0e8bb3f9af434c8bab01f0c890e4d
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Menu/Menu.unity
     guid: 9854db6f158ae4ca4bacb27f3a440a30
+  - enabled: 1
+    path: Assets/Scenes/CGScenes/Intro.unity
+    guid: 6aff550a09705409e89839d810bae6af
+  - enabled: 1
+    path: Assets/Scenes/CGScenes/Final.unity
+    guid: 174fc331db9a84f1880173b394351cd1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

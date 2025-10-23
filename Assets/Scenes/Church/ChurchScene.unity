@@ -864,7 +864,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297498988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b075b8d4457f41179cc640b9a8b0753, type: 3}
   m_Name: 
@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &423837490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3766,6 +3766,7 @@ GameObject:
   - component: {fileID: 1079121487}
   - component: {fileID: 1079121486}
   - component: {fileID: 1079121489}
+  - component: {fileID: 1079121490}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3901,8 +3902,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58597bdfa3bb41a1bba2027d688248a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playCutsceneOnInteract: 1
   dialogueData: {fileID: 11400000, guid: 25136101661ef43ec962100b69343836, type: 2}
   completeQuestOnInteract: 0
+--- !u!114 &1079121490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079121485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f306bea779cd4df9b21696df085affd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneController: {fileID: 0}
 --- !u!1 &1099886240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,7 +4163,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1441232679}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4335,7 +4350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1273671679
 Transform:
   m_ObjectHideFlags: 0
@@ -7163,7 +7178,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746798959}
   m_HandleRect: {fileID: 1746798958}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

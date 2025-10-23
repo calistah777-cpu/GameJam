@@ -31,11 +31,12 @@ public class SceneLoader : MonoBehaviour
             }
         }
 
-        // Optionally, create a new save with the starting scene
+        /*
         SaveData newSave = new SaveData { lastScene = "CemeteryScene" };
-        File.WriteAllText(saveLocation, JsonUtility.ToJson(newSave));
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(newSave));*/
 
-        SceneManager.LoadScene("CemeteryScene");
+        //SceneManager.LoadScene("CemeteryScene");
+        SceneManager.LoadScene("Intro");
     }
 
     public void OnLoadGame()

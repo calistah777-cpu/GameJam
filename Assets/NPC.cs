@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+    [SerializeField] private bool playCutsceneOnInteract = false; 
+    
     public NPCDialogue dialogueData;
     private DialogueController dialogueUI;
     private int dialogueIndex;
@@ -28,6 +30,12 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (playCutsceneOnInteract)
+        {
+            PlayFinalCutscene();
+            return;
+        }
+
         if (dialogueData == null)
         {
             return;
@@ -47,6 +55,20 @@ public class NPC : MonoBehaviour, IInteractable
         {
             StartDialogue();
         }
+    }
+
+    private void PlayFinalCutscene()
+    {
+        Debug.Log("[NPC] Playing final cutscene...");
+
+        // Optional: Save or clear progress before loading cutscene
+        if (SaveController.Instance != null)
+        {
+            SaveController.Instance.SaveGame();
+        }
+
+        // Load your cutscene scene
+        SceneManager.LoadScene("Final");
     }
 
     void StartDialogue()
